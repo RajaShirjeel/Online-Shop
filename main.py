@@ -30,7 +30,7 @@ class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(250), nullable=False)
     email = db.Column(db.String(250), nullable=False)
-    password = db.Column(db.String(80), nullable=False)
+    password = db.Column(db.String(250), nullable=False)
     comments = db.relationship('Comment', backref='user')
     orders = db.relationship('Order', backref='user')
     cart = db.relationship('Cart', backref='user', uselist=False)
